@@ -1,0 +1,269 @@
+
+/* Page background */
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #dbeafe 100%);
+  background-attachment: fixed;
+  color: #202044;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Heading */
+h1 {
+  margin: 0 0 8px;
+  color: #4338ca;
+  font-size: 36px;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+.app > p {
+  color: #62658a;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(79, 70, 229, 0.10);
+  backdrop-filter: blur(12px);
+}
+
+/* Inputs */
+input,
+select {
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid #d9dcf5;
+  border-radius: 10px;
+  background: #f8f9ff;
+  color: #303052;
+  font: inherit;
+  font-size: 14px;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 170px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #a5b4fc;
+  border-color: #6366f1;
+}
+
+/* Buttons */
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(99, 102, 241, 0.25);
+}
+
+/* Upload status */
+.message {
+  padding: 14px 18px;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  background: #d1fae5;
+  color: #065f46 !important;
+  font-size: 14px;
+}
+
+/* Statistics */
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 25px 0 32px;
+}
+
+.stat-card {
+  padding: 23px;
+  background: linear-gradient(145deg, #ffffff, #f5f3ff);
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(67, 56, 202, 0.09);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(67, 56, 202, 0.14);
+}
+
+.stat-card h3 {
+  margin: 0 0 12px;
+  color: #73749b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #5b4be7;
+  font-size: 34px;
+  font-weight: 750;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.image-card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 17px;
+  box-shadow: 0 8px 24px rgba(67, 56, 202, 0.09);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(67, 56, 202, 0.16);
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 11px;
+  background: #e0e7ff;
+}
+
+/* Filename */
+.image-name {
+  margin: 14px 2px;
+  overflow-wrap: anywhere;
+  color: #303052;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Card actions */
+.card-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-buttons button {
+  flex: 1;
+  box-shadow: none;
+}
+
+.card-buttons button:first-child {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.card-buttons button:first-child:hover {
+  background: #ddd6fe;
+}
+
+.card-buttons .delete-button {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+.card-buttons .delete-button:hover {
+  background: #fecdd3;
+}
+
+/* Empty state */
+.empty-message {
+  margin: 50px 0;
+  color: #71739a;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .app {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .toolbar {
+    padding: 14px;
+  }
+
+  .toolbar input,
+  .toolbar select,
+  .toolbar button {
+    width: 100%;
+  }
+
+  .statistics {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 13px;
+  }
+
+  .stat-card h3 {
+    font-size: 11px;
+  }
+
+  .stat-card p {
+    font-size: 25px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .image-card {
+    padding: 8px;
+  }
+
+  .image-card img {
+    height: 140px;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+}
